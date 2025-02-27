@@ -1,0 +1,135 @@
+CREATE TABLE products (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    chanpdma varchar(64) UNIQUE NOT NULL,
+    chanpmch varchar(64) NOT NULL,
+    kschpdma varchar(64) NOT NULL,
+    kschpmch varchar(64) NOT NULL
+);
+
+CREATE TABLE products (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    chanpdma varchar(64) UNIQUE NOT NULL,
+    chanpmch varchar(64) NOT NULL
+);
+
+CREATE TABLE userSign (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    vrcode varchar(64) UNIQUE NOT NULL,
+    username varchar(64) NOT NULL
+);
+
+
+
+CREATE TABLE orders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dingdanh varchar(64) NOT NULL,
+    dingdanm varchar(256) NOT NULL,
+    chanpdma varchar(64) NOT NULL,
+    chanpmch varchar(64) NOT NULL,
+    chanpshl INTEGER
+);
+
+drop table orderSimple;
+CREATE TABLE orderSimple (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dingdanh varchar(64) NOT NULL,
+    dingdanm varchar(256) NOT NULL,
+    beizhuxx varchar(256) default ''
+);
+
+insert into orderSimple (dingdanh,dingdanm, beizhuxx)
+values ('A001','XXX市XXX区健身广场订单','第一批次订单');
+insert into orderSimple (dingdanh,dingdanm, beizhuxx)
+values ('A002','XXX市XXX区健身广场订单','第二批次订单');
+
+insert into orders (dingdanh,dingdanm, chanpdma,chanpmch,chanpshl)
+values ('A001','XXX市XXX区健身广场订单','2001', '普通单杠', 50);
+insert into orders (dingdanh,dingdanm, chanpdma,chanpmch,chanpshl)
+values ('A001','XXX市XXX区健身广场订单','2002', '儿童单杠', 80);
+insert into orders (dingdanh,dingdanm, chanpdma,chanpmch,chanpshl)
+values ('A001','XXX市XXX区健身广场订单','2003', '普通爬梯', 40);
+
+insert into orders (dingdanh,dingdanm, chanpdma,chanpmch,chanpshl)
+values ('A002','XXX市XXX区健身广场订单','2001', '普通单杠', 10);
+insert into orders (dingdanh,dingdanm, chanpdma,chanpmch,chanpshl)
+values ('A002','XXX市XXX区健身广场订单','2002', '儿童单杠', 10);
+insert into orders (dingdanh,dingdanm, chanpdma,chanpmch,chanpshl)
+values ('A002','XXX市XXX区健身广场订单','2003', '普通爬梯', 10);
+
+insert into products (chanpdma,chanpmch) values ('2001', '普通单杠');
+insert into products (chanpdma,chanpmch) values ('2002', '儿童单杠');
+insert into products (chanpdma,chanpmch) values ('2003', '普通爬梯');
+
+CREATE TABLE ProductMaterial (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    chanpdma varchar(64) NOT NULL,
+    chanpmch varchar(64) NOT NULL,
+    wuliaobh INTEGER,
+    wuliaocd INTEGER,
+    wuliaosl INTEGER,
+    beizhuxx varchar(256) NOT NULL
+);
+
+CREATE TABLE material (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    wuliaolx varchar(64) NOT NULL,
+    wuliaobh INTEGER,
+    wuliaocd INTEGER,
+    beizhuxx varchar(256) NOT NULL
+);
+
+insert into material (wuliaolx,wuliaobh,wuliaocd,beizhuxx) values ('A1',1,5000,'细钢管');
+insert into material (wuliaolx,wuliaobh,wuliaocd,beizhuxx) values ('A2',2,8000,'中钢管');
+insert into material (wuliaolx,wuliaobh,wuliaocd,beizhuxx) values ('A3',2,6000,'粗钢管');
+
+
+insert into ProductMaterial (chanpdma,chanpmch,wuliaobh,wuliaocd,wuliaosl,beizhuxx)
+values ('2001','普通单杠','2','2000','2','竖杆');
+insert into ProductMaterial (chanpdma,chanpmch,wuliaobh,wuliaocd,wuliaosl,beizhuxx)
+values ('2001','普通单杠','1','1500','1','横杆');
+insert into ProductMaterial (chanpdma,chanpmch,wuliaobh,wuliaocd,wuliaosl,beizhuxx)
+values ('2002','儿童单杠','2','1600','2','竖杆');
+insert into ProductMaterial (chanpdma,chanpmch,wuliaobh,wuliaocd,wuliaosl,beizhuxx)
+values ('2002','儿童单杠','1','1400','1','横杆');
+insert into ProductMaterial (chanpdma,chanpmch,wuliaobh,wuliaocd,wuliaosl,beizhuxx)
+values ('2003','普通爬梯','2','2000','4','竖杆');
+insert into ProductMaterial (chanpdma,chanpmch,wuliaobh,wuliaocd,wuliaosl,beizhuxx)
+values ('2003','普通爬梯','1','3000','2','长横杆');
+insert into ProductMaterial (chanpdma,chanpmch,wuliaobh,wuliaocd,wuliaosl,beizhuxx)
+values ('2003','普通爬梯','1','500','11','短横杆');
+x`
+create table userSubject (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name varchar(64) NOT NULL,
+    subject varchar(64) NOT NULL
+);
+
+insert into users (name, email) values ('bill4', 'bill@164.com');
+insert into users (name, email) values ('bill5', 'bill@165.com');
+insert into users (name, email) values ('bill6', 'bill@166.com');
+insert into users (name, email) values ('bill7', 'bill@167.com');
+insert into users (name, email) values ('bill8', 'bill@168.com');
+insert into users (name, email) values ('bill9', 'bill@169.com');
+insert into users (name, email) values ('bill0', 'bill@16A.com');
+insert into users (name, email) values ('billA', 'bill@16B.com');
+insert into users (name, email) values ('billB', 'bill@16C.com');
+insert into users (name, email) values ('billC', 'bill@16D.com');
+insert into users (name, email) values ('billD', 'bill@16E.com');
+insert into users (name, email) values ('billE', 'bill@16F.com');
+insert into users (name, email) values ('billF', 'bill@16G.com');
+insert into users (name, email) values ('billG', 'bill@16H.com');
+insert into users (name, email) values ('billH', 'bill@164I.com');
+insert into users (name, email) values ('billI', 'bill@164J.com');
+
+insert into userSubject (name, subject) values ('bill', 'chinese');
+insert into userSubject (name, subject) values ('bill', 'english');
+insert into userSubject (name, subject) values ('bill', 'math');
+insert into userSubject (name, subject) values ('bill', 'biology');
+
+insert into userSubject (name, subject) values ('Bill', 'chinese');
+insert into userSubject (name, subject) values ('Bill', 'english');
+insert into userSubject (name, subject) values ('Bill', 'math');
+insert into userSubject (name, subject) values ('Bill', 'biology');
+
+
+insert into ProductMaterial (chanpdma,chanpmch,wuliaobh,wuliaocd,wuliaosl,beizhuxx) values ("120001","儿童单杠","1001","1000","2","儿童单杠支撑");
